@@ -1,1 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/css/tui/4.21.22/tui-grid.css" />
+
+<script src="/js/jquery/3.7.1/jquery-3.7.1.js"></script>
+<script src="/js/tui/4.21.22/tui-grid.js"></script>
+<title>hello world!!!</title>
+<script type="text/javascript">
+
+const gridData = null;
+
+let grid = null;
+
+const data = [
+	  {
+	    id: '10012',
+	    city: 'Seoul',
+	    country: 'South Korea'
+	  },
+	  {
+	    id: '10013',
+	    city: 'Tokyo',
+	    country: 'Japan'    
+	  },
+	  {
+	    id: '10014',
+	    city: 'London',
+	    country: 'England'
+	  },
+	  {
+	    id: '10015',
+	    city: 'Ljubljana',
+	    country: 'Slovenia'
+	  },
+	  {
+	    id: '10016',
+	    city: 'Reykjavik',
+	    country: 'Iceland'
+	  }
+	];
+
+
+$(document).ready(function(){
+	grid = new tui.Grid({
+	    el: document.getElementById('grid'),
+	    scrollX: false,
+	    scrollY: false,
+	    columns: [
+	    	  {
+	    		    header: 'ID',
+	    		    name: 'id'
+	    		  },
+	    		  {
+	    		    header: 'CITY',
+	    		    name: 'city',
+	    		    editor: 'text'
+	    		  },
+	    		  {
+	    		    header: 'COUNTRY',
+	    		    name: 'country'
+	    		  }
+	    ]
+	  });
+	
+	grid.resetData(data);
+	
+});
+
+
+
+</script>
+</head>
+<body>
 hello world!!!
+
+
+<div id="grid"></div>
+
+
+</body>
+</html>
